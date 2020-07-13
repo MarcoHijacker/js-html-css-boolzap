@@ -8,4 +8,162 @@
 }
 body {
   font-family: Montserrat;
+  width: 100%;
+  height: 100vh;
+}
+main {
+  display: flex;
+  height: 100%;
+}
+.left-menu {
+  width: 35%;
+  height: 100%;
+  /* background-color: green; */
+}
+.right-menu {
+  width: 65%;
+  height: 100%;
+  background-color: blue;
+}
+.personal-area {
+  background-color: #eaeaea;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact-info {
+  background-color: #eaeaea;
+  height: 70px;
+  border-left: solid 1px #cecece;
+}
+.alert-area {
+  height: 80px;
+  background-color: #8ddbfc;
+}
+.search-area {
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border: solid 5px #eaeaea;
+}
+.contact-conv {
+  display: flex;
+  align-items: center;
+  height: 90px;
+  border-bottom: solid 1px #cecece;
+  cursor: pointer;
+}
+.contact-conv:hover {
+  background-color: #e9eceb;
+}
+.conv-active {
+  background-color: #e9eceb;
+}
+.text-space {
+  height: calc(100% - 140px);
+}
+.send-area {
+  background-color: orange;
+  height: 70px;
+}
+.field-pic {
+  width: 20%;
+  text-align: center;
+}
+.field-info {
+  width: 70%;
+}
+.field-img {
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+  background-color: #eeeeee;
+}
+.field-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px 0;
+}
+.field-lastmsg {
+  font-size: 12px;
+  color: grey;
+}
+.field-hour {
+  font-size: 12px;
+  color: grey;
+  width: 10%;
+}
+.text-space {
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.alert-area {
+  display: flex;
+  align-items: center;
+}
+.alert-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.alert-link {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+.alert-pic {
+  width: 20%;
+  text-align: center;
+}
+.alert-pic i {
+  color: #8ddbfc;
+  font-size: 22px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 18px;
+}
+.alert-text {
+  width: 80%;
+}
+.mypicture-img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  background-color: white;
+  margin: 5px;
+  cursor: pointer;
+}
+.myoptions {
+  font-size: 22px;
+  color: #cecece;
+}
+.myoptions i {
+  cursor: pointer;
+  margin: 0 8px;
+}
+.myoptions i:last-child {
+  margin-right: 20px;
+}
+.myoptions i:hover {
+  color: grey;
+}
+.search-lens {
+  width: 20%;
+  text-align: center;
+  background-color: white;
+}
+.search-lens i {
+  color: #cecece;
+  font-size: 16px;
+}
+.search-bar {
+  width: 80%;
+}
+.search-bar input {
+  width: 100%;
+  border: none;
+  height: 30px;
 }
