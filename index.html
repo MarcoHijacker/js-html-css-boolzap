@@ -122,16 +122,36 @@
 					</div>
 				</div>
 				<div class="text-space">
-
+					<div class="owner-msg">
+						Ciao!
+						<span class="hour-msg">16:30</span>
+					</div>
+					<div class="contact-msg">
+						Ciao, come stai?
+						<span class="hour-msg">16:32</span>
+					</div>
+					<div class="owner-msg">
+						Io bene, tu?
+						<span class="hour-msg">16:35</span>
+					</div>
+					<!-- Template messaggi owner e contact -->
+					<div id="owner-msg-templ" class="owner-msg" style="display: none;">
+						Area Messaggio.
+						<span class="hour-msg">HH:mm</span>
+					</div>
+					<div id="contact-msg-templ" class="contact-msg" style="display: none;">
+						Area Messaggio.
+						<span class="hour-msg">HH:mm</span>
+					</div>
 				</div>
 				<div class="send-area">
 					<div class="send-emoji">
 						<i class="far fa-smile"></i>
 					</div>
 					<div class="send-input">
-						<input type="text" name="send-input" value="" placeholder="Scrivi un messaggio">
+						<input id="content-msg" type="text" name="send-input" value="" placeholder="Scrivi un messaggio">
 					</div>
-					<div class="send-button">
+					<div id="send-msg" class="send-button">
 						<i class="fas fa-paper-plane"></i>
 					</div>
 				</div>
