@@ -19,5 +19,6 @@ function addMessage() {
     ownerMsg.append('<span class="hour-msg">HH:mm</span>');
     $('.text-space').append(ownerMsg);
     ownerMsg.show();
+    $('#content-msg').val('');
   });
 }
