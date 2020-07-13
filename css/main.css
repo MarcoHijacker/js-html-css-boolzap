@@ -204,6 +204,7 @@ main {
 }
 .contact-pic {
   width: 10%;
+  text-align: center;
 }
 .contact-pic img {
   width: 50px;
@@ -222,6 +223,7 @@ main {
 .contact-options {
   font-size: 22px;
   color: #cecece;
+  text-align: right;
 }
 .contact-options i {
   cursor: pointer;
