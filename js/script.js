@@ -60,6 +60,7 @@ function addMessageByKey() {
     showArrow();
     showMenu();
     deleteMsg();
+
   }
 });
 }
@@ -77,6 +78,7 @@ function autoReply() {
   showArrow();
   showMenu();
   deleteMsg();
+
 }
 // Funzione che visualizza i chevron
 function showArrow() {
@@ -113,7 +115,7 @@ function showMenu() {
 function deleteMsg() {
   var ownerDelete = $('div.owner-msg .dropdown-delete');
   var contactDelete = $('div.contact-msg .dropdown-delete');
-
+// parent().parent() = .gparent(2)
   ownerDelete.click(function() {
     $(this).parent().parent().remove(); // Il div del messaggio è il 'nonno' del div.dropdown-delete
   });
