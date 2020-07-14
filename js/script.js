@@ -32,10 +32,6 @@ function addMessage() {
       ownerMsg.show();
       $('#content-msg').val('');
       setTimeout(autoReply, 1000);
-
-      showArrow();
-      showMenu();
-      deleteMsg();
     }
   });
 }
@@ -56,11 +52,6 @@ function addMessageByKey() {
     ownerMsg.show();
     $('#content-msg').val('');
     setTimeout(autoReply, 1000);
-
-    showArrow();
-    showMenu();
-    deleteMsg();
-
   }
 });
 }
@@ -74,52 +65,37 @@ function autoReply() {
   contactMsg.find('#contact-msg-hour').text(time);
   $('.text-space').append(contactMsg);
   contactMsg.show();
-
-  showArrow();
-  showMenu();
-  deleteMsg();
-
 }
 // Funzione che visualizza i chevron
 function showArrow() {
-  var ownerMsg = $('div.owner-msg');
-  var contactMsg = $('div.contact-msg');
-
-  ownerMsg.mouseover(function() {
+  $(document).on('mouseover', 'div.owner-msg', function() {
     $(this).find('.info-msg').addClass('active');
   });
-  contactMsg.mouseover(function() {
+  $(document).on('mouseover', 'div.contact-msg', function() {
     $(this).find('.info-msg').addClass('active');
   });
-  ownerMsg.mouseleave(function() {
+  $(document).on('mouseleave', 'div.owner-msg', function() {
     $(this).find('.info-msg').removeClass('active');
   });
-  contactMsg.mouseleave(function() {
+  $(document).on('mouseleave', 'div.contact-msg', function() {
     $(this).find('.info-msg').removeClass('active');
   });
-
 }
 // Funzione che visualizza i menu sul click sullo chevron
 function showMenu() {
-  var ownerArrow = $('div.owner-msg .info-msg');
-  var contactArrow = $('div.contact-msg .info-msg');
-
-  ownerArrow.click(function() {
+  $(document).on('click', 'div.owner-msg .info-msg', function() {
     $(this).next('div').toggleClass('active');
   });
-  contactArrow.click(function() {
+  $(document).on('click', 'div.contact-msg .info-msg', function() {
     $(this).next('div').toggleClass('active');
   });
 }
 // Funzione che elimina messaggio
 function deleteMsg() {
-  var ownerDelete = $('div.owner-msg .dropdown-delete');
-  var contactDelete = $('div.contact-msg .dropdown-delete');
-// parent().parent() = .gparent(2)
-  ownerDelete.click(function() {
-    $(this).parent().parent().remove(); // Il div del messaggio è il 'nonno' del div.dropdown-delete
+  $(document).on('click', 'div.owner-msg .dropdown-delete', function() {
+    $(this).parent().parent().remove();
   });
-  contactDelete.click(function() {
+  $(document).on('click', 'div.contact-msg .dropdown-delete', function() {
     $(this).parent().parent().remove();
   });
 }
