@@ -32,6 +32,10 @@ function addMessage() {
       ownerMsg.show();
       $('#content-msg').val('');
       setTimeout(autoReply, 1000);
+
+      showArrow();
+      showMenu();
+      deleteMsg();
     }
   });
 }
@@ -52,6 +56,10 @@ function addMessageByKey() {
     ownerMsg.show();
     $('#content-msg').val('');
     setTimeout(autoReply, 1000);
+
+    showArrow();
+    showMenu();
+    deleteMsg();
   }
 });
 }
@@ -61,10 +69,14 @@ function autoReply() {
   var time = dt.getHours() + ":" + dt.getMinutes();
 
   var contactMsg = $('#contact-msg-templ').clone();
-  contactMsg.text('Ok!');
-  contactMsg.append('<span class="hour-msg">' + time + '</span>');
+  contactMsg.find('#contact-msg-cont').text('Ok!');
+  contactMsg.find('#contact-msg-hour').text(time);
   $('.text-space').append(contactMsg);
   contactMsg.show();
+
+  showArrow();
+  showMenu();
+  deleteMsg();
 }
 // Funzione che visualizza i chevron
 function showArrow() {
