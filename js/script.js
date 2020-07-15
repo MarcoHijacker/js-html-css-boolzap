@@ -10,6 +10,7 @@ function init() {
   showMenu();
   deleteMsg();
   liveSearch();
+  showConv();
 
 }
 
@@ -29,7 +30,9 @@ function addMessage() {
 
       ownerMsg.find('#owner-msg-cont').text(content);
       ownerMsg.find('#owner-msg-hour').text(time);
-      $('.text-space').append(ownerMsg);
+      // Ho aggiunto il selettore sullo style perché riesco a particolarizzare
+      // la conversazione attiva in cui inviare il messaggio
+      $('.text-space[style=""]').append(ownerMsg);
       ownerMsg.show();
       $('#content-msg').val('');
       setTimeout(autoReply, 1000);
@@ -49,7 +52,7 @@ function addMessageByKey() {
 
     ownerMsg.find('#owner-msg-cont').text(content);
     ownerMsg.find('#owner-msg-hour').text(time);
-    $('.text-space').append(ownerMsg);
+    $('.text-space[style=""]').append(ownerMsg);
     ownerMsg.show();
     $('#content-msg').val('');
     setTimeout(autoReply, 1000);
@@ -64,10 +67,10 @@ function autoReply() {
 
   contactMsg.find('#contact-msg-cont').text('Ok!');
   contactMsg.find('#contact-msg-hour').text(time);
-  $('.text-space').append(contactMsg);
+  $('.text-space[style=""]').append(contactMsg);
   contactMsg.show();
 }
-// Funzione che visualizza i chevron
+// Funzione che visualizza i chevron (event delegation)
 function showArrow() {
   $(document).on('mouseover', 'div.owner-msg', function() {
     $(this).find('.info-msg').addClass('active');
@@ -82,7 +85,7 @@ function showArrow() {
     $(this).find('.info-msg').removeClass('active');
   });
 }
-// Funzione che visualizza i menu sul click sullo chevron
+// Funzione che visualizza i menu sul click sullo chevron (event delegation)
 function showMenu() {
   $(document).on('click', 'div.owner-msg .info-msg', function() {
     $(this).next('div').toggleClass('active');
@@ -91,7 +94,7 @@ function showMenu() {
     $(this).next('div').toggleClass('active');
   });
 }
-// Funzione che elimina messaggio
+// Funzione che elimina messaggio (event delegation)
 function deleteMsg() {
   $(document).on('click', 'div.owner-msg .dropdown-delete', function() {
     $(this).parent().parent().remove();
@@ -101,8 +104,10 @@ function deleteMsg() {
   });
 }
 // Funzione per cercare conversazioni
-// Non l'ho fatta io, l'ho solo adattata al mio html. Recuperata da: https://www.w3schools.com/jquery/jquery_filters.asp
 function liveSearch() {
+  // Non l'ho fatta io, l'ho solo adattata al mio html.
+  // Recuperata da: https://www.w3schools.com/jquery/jquery_filters.asp
+  // Però ho capito la logica!
   var convArray = $('.contact-area .contact-conv .field-info .field-name');
 
   $('#search-conv').keydown(function() {
@@ -116,5 +121,20 @@ function liveSearch() {
         });
       });
     }
+  });
+}
+// Funzione per visualizzare relativa conversazione
+function showConv() {
+  var convIndex = $('.contact-conv');
+
+  convIndex.click(function() {
+    $('.contact-conv').removeClass('conv-active');
+    $(this).addClass('conv-active');
+    var convActive = $(this).data().id;
+
+    $('.text-space').hide();
+    $('.text-space[data-id=' + convActive + ']').show();
+    $('.contact-info').hide();
+    $('.contact-info[data-id=' + convActive + ']').show();
   });
 }

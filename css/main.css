@@ -16,15 +16,15 @@ main {
   display: flex;
   height: 100%;
 }
+
+/* Specifici */
 .left-menu {
   width: 35%;
   height: 100%;
-  /* background-color: green; */
 }
 .right-menu {
   width: 65%;
   height: 100%;
-  background-color: blue;
 }
 .personal-area {
   background-color: #eaeaea;
@@ -273,8 +273,6 @@ main {
   color: grey;
   font-size: 10px;
 }
-/* Dropdown templ */
-
 .dropdown-menu {
   background-color: white;
   position: absolute;

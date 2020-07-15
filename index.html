@@ -15,7 +15,10 @@
 
 		<main>
 
+			<!-- MACROBLOCCO SINISTRO -->
+
 			<div class="left-menu">
+				<!-- Header con informazioni utente -->
 				<div class="personal-area">
 					<div class="mypicture">
 						<img src="img/owner.png" class="mypicture-img" alt="owner">
@@ -26,6 +29,8 @@
 						<i class="fas fa-ellipsis-v"></i>
 					</div>
 				</div>
+
+				<!-- Blocco attivazione notifiche -->
 				<div class="alert-area">
 					<div class="alert-pic">
 						<i class="fas fa-bell-slash"></i>
@@ -39,6 +44,8 @@
 						</div>
 					</div>
 				</div>
+
+				<!-- Area ricerca contatti -->
 				<div class="search-area">
 					<div class="search-lens">
 						<i class="fas fa-search"></i>
@@ -47,8 +54,11 @@
 						<input id="search-conv" type="text" name="search" value="" placeholder="Cerca o inizia una nuova chat">
 					</div>
 				</div>
+
+				<!-- Lista conversazioni -->
 				<div class="contact-area">
-					<div class="contact-conv conv-active">
+
+					<div class="contact-conv conv-active" data-id="0">
 						<div class="field-pic">
 							<img src="img/girl-1.png" class="field-img" alt="girl-1">
 						</div>
@@ -57,15 +67,15 @@
 								Roberta
 							</div>
 							<div class="field-lastmsg">
-								Davvero mi passi a prendere in Ferrari?
+								Io bene, tu?
 							</div>
 						</div>
 						<div class="field-hour">
-							17.53
+							16.35
 						</div>
-
 					</div>
-					<div class="contact-conv">
+
+					<div class="contact-conv" data-id="1">
 						<div class="field-pic">
 							<img src="img/girl-2.png" class="field-img" alt="girl-1">
 						</div>
@@ -74,15 +84,15 @@
 								Elena
 							</div>
 							<div class="field-lastmsg">
-								Davvero mi passi a prendere in Ferrari?
+								Come non detto...
 							</div>
 						</div>
 						<div class="field-hour">
-							17.30
+							16.15
 						</div>
-
 					</div>
-					<div class="contact-conv">
+
+					<div class="contact-conv" data-id="2">
 						<div class="field-pic">
 							<img src="img/girl-3.png" class="field-img" alt="girl-1">
 						</div>
@@ -91,19 +101,22 @@
 								Francesca
 							</div>
 							<div class="field-lastmsg">
-								Davvero mi passi a prendere in Ferrari?
+								Che giornataccia...
 							</div>
 						</div>
 						<div class="field-hour">
-							17.20
+							16.35
 						</div>
-
 					</div>
+
 				</div>
 			</div>
 
+			<!-- MACROBLOCCO DESTRO -->
 			<div class="right-menu">
-				<div class="contact-info">
+
+				<!-- Informazioni contatto interlocutore -->
+				<div class="contact-info" data-id="0">
 					<div class="contact-pic">
 						<img src="img/girl-1.png" class="field-img" alt="girl-1">
 					</div>
@@ -112,7 +125,7 @@
 							Roberta
 						</div>
 						<div class="last-seen">
-							Ultimo accesso oggi alle 17.00
+							Ultimo accesso oggi alle 16.32
 						</div>
 					</div>
 					<div class="contact-options">
@@ -121,7 +134,48 @@
 						<i class="fas fa-ellipsis-v"></i>
 					</div>
 				</div>
-				<div class="text-space">
+
+				<div class="contact-info" style="display: none;" data-id="1">
+					<div class="contact-pic">
+						<img src="img/girl-2.png" class="field-img" alt="girl-2">
+					</div>
+					<div class="contact-title">
+						<div class="contact-name">
+							Elena
+						</div>
+						<div class="last-seen">
+							Ultimo accesso oggi alle 16.12
+						</div>
+					</div>
+					<div class="contact-options">
+						<i class="fas fa-search"></i>
+						<i class="fas fa-paperclip"></i>
+						<i class="fas fa-ellipsis-v"></i>
+					</div>
+				</div>
+
+				<div class="contact-info" style="display: none;" data-id="2">
+					<div class="contact-pic">
+						<img src="img/girl-3.png" class="field-img" alt="girl-3">
+					</div>
+					<div class="contact-title">
+						<div class="contact-name">
+							Francesca
+						</div>
+						<div class="last-seen">
+							Ultimo accesso oggi alle 16.32
+						</div>
+					</div>
+					<div class="contact-options">
+						<i class="fas fa-search"></i>
+						<i class="fas fa-paperclip"></i>
+						<i class="fas fa-ellipsis-v"></i>
+					</div>
+				</div>
+
+				<!-- Area messaggi inviati/ricevuti -->
+				<!-- Messaggi Roberta -->
+				<div class="text-space" style="" data-id="0">
 
 					<div class="owner-msg">
 						Ciao!
@@ -137,6 +191,7 @@
 						</div>
 
 					</div>
+
 					<div class="contact-msg">
 						Ciao, come stai?
 						<span class="hour-msg">16:32</span>
@@ -164,37 +219,101 @@
 							</div>
 						</div>
 					</div>
-
-					<!-- Template messaggi owner e contact -->
-					<div id="owner-msg-templ" class="owner-msg" style="display: none;">
-						<div id="owner-msg-cont"></div>
-						<span id="owner-msg-hour" class="hour-msg">HH:mm</span>
-						<span class="info-msg"><i class="fas fa-chevron-down"></i></span>
-						<div class="dropdown-menu">
-							<div class="dropdown-info">
-								Info msg
-							</div>
-							<div class="dropdown-delete">
-								Elimina msg
-							</div>
-						</div>
-					</div>
-
-					<div id="contact-msg-templ" class="contact-msg" style="display: none;">
-						<div id="contact-msg-cont"></div>
-						<span id="contact-msg-hour" class="hour-msg">HH:mm</span>
-						<span class="info-msg"><i class="fas fa-chevron-down"></i></span>
-						<div class="dropdown-menu">
-							<div class="dropdown-info">
-								Info msg
-							</div>
-							<div class="dropdown-delete">
-								Elimina msg
-							</div>
-						</div>
-					</div>
-
 				</div>
+				<!-- Messaggi Elena -->
+				<div class="text-space" style="display: none;" data-id="1">
+
+					<div class="owner-msg">
+						Ciao! Ti va di andare al mare?
+						<span class="hour-msg">16:10</span>
+						<span class="info-msg"><i class="fas fa-chevron-down"></i></span>
+						<div class="dropdown-menu">
+							<div class="dropdown-info">
+								Info msg
+							</div>
+							<div class="dropdown-delete">
+								Elimina msg
+							</div>
+						</div>
+
+					</div>
+
+					<div class="contact-msg">
+						Ma se ci conosciamo appena!
+						<span class="hour-msg">16:12</span>
+						<span class="info-msg"><i class="fas fa-chevron-down"></i></span>
+						<div class="dropdown-menu">
+							<div class="dropdown-info">
+								Info msg
+							</div>
+							<div class="dropdown-delete">
+								Elimina msg
+							</div>
+						</div>
+					</div>
+
+					<div class="owner-msg">
+						Come non detto...
+						<span class="hour-msg">16:15</span>
+						<span class="info-msg"><i class="fas fa-chevron-down"></i></span>
+						<div class="dropdown-menu">
+							<div class="dropdown-info">
+								Info msg
+							</div>
+							<div class="dropdown-delete">
+								Elimina msg
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Messaggi Francesca -->
+				<div class="text-space" style="display: none;" data-id="2">
+
+					<div class="owner-msg">
+						Ciao! Ti va di andare al cinema?
+						<span class="hour-msg">16:30</span>
+						<span class="info-msg"><i class="fas fa-chevron-down"></i></span>
+						<div class="dropdown-menu">
+							<div class="dropdown-info">
+								Info msg
+							</div>
+							<div class="dropdown-delete">
+								Elimina msg
+							</div>
+						</div>
+
+					</div>
+
+					<div class="contact-msg">
+						Non mi piacciono i film e non mi piaci nemmeno tu!
+						<span class="hour-msg">16:32</span>
+						<span class="info-msg"><i class="fas fa-chevron-down"></i></span>
+						<div class="dropdown-menu">
+							<div class="dropdown-info">
+								Info msg
+							</div>
+							<div class="dropdown-delete">
+								Elimina msg
+							</div>
+						</div>
+					</div>
+
+					<div class="owner-msg">
+						Che giornataccia...
+						<span class="hour-msg">16:35</span>
+						<span class="info-msg"><i class="fas fa-chevron-down"></i></span>
+						<div class="dropdown-menu">
+							<div class="dropdown-info">
+								Info msg
+							</div>
+							<div class="dropdown-delete">
+								Elimina msg
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Area di composizione e invio messaggi -->
 				<div class="send-area">
 					<div class="send-emoji">
 						<i class="far fa-smile"></i>
@@ -206,7 +325,38 @@
 						<i class="fas fa-paper-plane"></i>
 					</div>
 				</div>
+
 			</div>
+			<!-- Template messaggio Owner -->
+			<div id="owner-msg-templ" class="owner-msg" style="display: none;">
+				<div id="owner-msg-cont"></div>
+				<span id="owner-msg-hour" class="hour-msg">HH:mm</span>
+				<span class="info-msg"><i class="fas fa-chevron-down"></i></span>
+				<div class="dropdown-menu">
+					<div class="dropdown-info">
+						Info msg
+					</div>
+					<div class="dropdown-delete">
+						Elimina msg
+					</div>
+				</div>
+			</div>
+
+			<!-- Template messaggio Contact -->
+			<div id="contact-msg-templ" class="contact-msg" style="display: none;">
+				<div id="contact-msg-cont"></div>
+				<span id="contact-msg-hour" class="hour-msg">HH:mm</span>
+				<span class="info-msg"><i class="fas fa-chevron-down"></i></span>
+				<div class="dropdown-menu">
+					<div class="dropdown-info">
+						Info msg
+					</div>
+					<div class="dropdown-delete">
+						Elimina msg
+					</div>
+				</div>
+			</div>
+
 		</main>
 
 	</body>
