@@ -108,19 +108,13 @@ function liveSearch() {
   // Non l'ho fatta io, l'ho solo adattata al mio html.
   // Recuperata da: https://www.w3schools.com/jquery/jquery_filters.asp
   // Però ho capito la logica!
-  var convArray = $('.contact-area .contact-conv .field-info .field-name');
-
   $('#search-conv').keydown(function() {
-    var key = event.which;
-
-    if(key == 13) {
       $("#search-conv").on("keyup", function() {
         var value = $(this).val().toLowerCase();
         $(".contact-area .field-name").filter(function() {
           $(this).parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
-    }
   });
 }
 // Funzione per visualizzare relativa conversazione
